@@ -67,6 +67,27 @@
             color: white;
             white-space: nowrap;
         }
+        .nav-links {
+            margin-top: 5px;
+        }
+        .nav-links a {
+            display: block;
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            white-space: nowrap;
+            line-height: 0.95;
+            transition: opacity 0.3s ease;
+        }
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        .robots-link { color: #00f; }
+        .art-link { color: #f00; }
+        .other-link { color: #ff0; }
+        
         .enter-text {
             position: absolute;
             bottom: 40px;
@@ -93,12 +114,18 @@
         </video>
         <div class="dot-overlay"></div>
     </div>
-    <div class="overlay-box">
-        <div class="glitch-container">
-            <h1>Your Name</h1>
+    <div class="sign-box">
+        <div class="sign-text">
+            YOUR NAME<br>
         </div>
-        <div class="subtitle">Full Stack Developer</div>
-        <button class="enter-button" onclick="enterSite()">Enter Site</button>
+        <div class="nav-links">
+            <a href="robots.html" class="robots-link">ROBOTS</a>
+            <a href="art.html" class="art-link">ART</a>
+            <a href="other.html" class="other-link">OTHER</a>
+        </div>
+    </div>
+    <div class="enter-text" onclick="enterSite()">
+        ENTER
     </div>
     <script>
         function enterSite() {

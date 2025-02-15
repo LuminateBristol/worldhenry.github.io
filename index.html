@@ -14,7 +14,7 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         .video-container {
             position: absolute;
@@ -34,123 +34,7 @@
             width: auto;
             height: auto;
             object-fit: cover;
-        }
-        .overlay-box {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 8px;
-            color: white;
-            text-align: center;
-        }
-        .overlay-box h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        .enter-button {
-            background: #ffcc00;
-            color: black;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        .enter-button:hover {
-            background: #ff9900;
-        }
-    </style>
-</head>
-<body>
-    <div class="video-container">
-        <video autoplay muted loop>
-            <source src="your-video-file.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-    <div class="overlay-box">
-        <h1>Your Name</h1>
-        <button class="enter-button" onclick="enterSite()">Enter</button>
-    </div>
-    <script>
-        function enterSite() {
-            window.location.href = "nextpage.html"; // Change to your next section/page
-        }
-    </script>
-</body>
-</html>
-
-I would like to add a cool filter dotted effect over the top of the video
-
-I'll help you create a cool dotted overlay effect for your video background. I'll enhance your code with a modern dot matrix effect that will add visual interest while maintaining readability.
-
-I've made several enhancements to your code:
-
-    Added a dot matrix overlay using CSS radial-gradient
-    Improved the overlay box design:
-        Centered it on the page
-        Added backdrop blur effect
-        Improved shadow and border
-        Made it more modern with subtle transparency
-    Enhanced the button styling:
-        Added hover animation
-        Improved typography
-        Added subtle shadow on hover
-    Added a slight brightness adjustment to the video
-    Made the dots subtle but visible with proper spacing
-
-The key addition is the .dot-overlay class which creates the dot matrix effect. You can customize it by:
-
-    Adjusting the dot size by changing the 1px values
-    Changing the dot color by modifying the rgba values
-    Adjusting the spacing by changing the background-size value (currently 15px)
-    Modifying the opacity in the rgba value (currently 0.3)
-
-Would you like me to adjust any of these aspects or add additional effects?
-Claude can make mistakes. Please double-check responses.
-
-
-Landing Page with Video and Dot Matrix Overlay
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body, html {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-        }
-        .video-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-        video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            object-fit: cover;
-            filter: brightness(0.8);
+            filter: brightness(0.7) contrast(1.1);
         }
         .dot-overlay {
             position: absolute;
@@ -168,39 +52,94 @@ Landing Page with Video and Dot Matrix Overlay
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, 0.7);
-            padding: 40px 60px;
-            border-radius: 16px;
+            background: rgba(17, 17, 17, 0.8);
+            padding: 40px;
+            border-radius: 24px;
             color: white;
             text-align: center;
             z-index: 2;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            min-width: 320px;
+        }
+        .glitch-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
         }
         .overlay-box h1 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            font-weight: 700;
-            letter-spacing: 1px;
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
         }
         .enter-button {
-            background: #ffcc00;
-            color: black;
-            padding: 12px 30px;
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            color: white;
+            padding: 15px 40px;
             border: none;
             cursor: pointer;
-            font-size: 18px;
-            border-radius: 8px;
+            font-size: 16px;
+            border-radius: 12px;
             transition: all 0.3s ease;
             text-transform: uppercase;
             font-weight: 600;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+        .enter-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        .enter-button:hover::before {
+            left: 100%;
         }
         .enter-button:hover {
-            background: #ff9900;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 204, 0, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 255, 255, 0.3);
+        }
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
+            }
+            20% {
+                transform: translate(-2px, 2px);
+            }
+            40% {
+                transform: translate(-2px, -2px);
+            }
+            60% {
+                transform: translate(2px, 2px);
+            }
+            80% {
+                transform: translate(2px, -2px);
+            }
+            100% {
+                transform: translate(0);
+            }
+        }
+        .overlay-box h1:hover {
+            animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
         }
     </style>
 </head>
@@ -213,8 +152,11 @@ Landing Page with Video and Dot Matrix Overlay
         <div class="dot-overlay"></div>
     </div>
     <div class="overlay-box">
-        <h1>Your Name</h1>
-        <button class="enter-button" onclick="enterSite()">Enter</button>
+        <div class="glitch-container">
+            <h1>Your Name</h1>
+        </div>
+        <div class="subtitle">Full Stack Developer</div>
+        <button class="enter-button" onclick="enterSite()">Enter Site</button>
     </div>
     <script>
         function enterSite() {
@@ -223,4 +165,3 @@ Landing Page with Video and Dot Matrix Overlay
     </script>
 </body>
 </html>
-Last edited just now

@@ -15,7 +15,7 @@
             overflow: hidden;
         }
         .sidebar {
-            width: 33.33%;
+            width: 25%;
             background-color: #f4f4f4;
             padding: 15px;
             box-sizing: border-box;
@@ -25,7 +25,7 @@
             justify-content: space-between;
         }
         .content {
-            width: 66.67%;
+            width: 75%;
             padding: 15px;
             box-sizing: border-box;
             overflow-y: auto;
@@ -94,24 +94,47 @@
 </head>
 <body>
     <div class="sidebar">
-        <p>Static Sidebar Content</p>
-        <p>This area remains fixed and contains static information.</p>
+        <p>robots.</p>
+        <p>A selection of robotics projects and initiatives.</p>
         <div class="links">
             <a href="index.html">Home</a>
             <a href="contact.html">Contact</a>
-            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/henry-hickson-29360090/" target="_blank">LinkedIn</a>
         </div>
     </div>
     <div class="content">
         <div class="section">
             <div class="carousel">
-                <img src="image1.jpg" alt="Image 1" class="active">
-                <img src="image2.jpg" alt="Image 2">
-                <img src="image3.jpg" alt="Image 3">
+                <img src="Assets/hive_1.pnh" alt="Image 1" class="active">
+                <video autoplay muted loop>
+                    <source src="/Assets/hive_2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img src="Assets/hive_3.jpg" alt="Image 3">
             </div>
             <div class="section-text">
-                <p>Section Title 1</p>
-                <p>Description for the first section goes here.</p>
+                <p>The Hive (PhD project - 2022-present)</p>
+                <p>My ongoing PhD project challenges the typical stereotypes of swarm robotics in an attempt to build a full-pipeline system to deploy swarms of robots in the real world. Unlike the traditional approach, we make use of 'The Hive', a globally accessible information repository that all robots can communicate through. The Hive is designed to be maleable, using a knowledge graph format to store information, facilitate communication with human collaborators and enable online learing.</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="carousel">
+                <img src="Assets/fort_1.jpg" alt="Image 1" class="active">
+                <img src="Assets/fort_2.jpg" alt="Image 2">
+                <img src="Assets/fort_3.jpg" alt="Image 3">
+            </div>
+            <div class="section-text">
+                <p>Fortitude  (2014-2015</p>
+                <p>In 2015, as part of my MEng in Marine Engineering, we were tasked with designing, building and testing an ocean-capable autonomous surface vessel. We had minimal budget and a very tight timeline. Many industry partners said it was impossible. In less than 6 months we raised funds through sponsorship, designed, built and deployed the system. It even self-righted in the event of a capsize!</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="carousel">
+                <img src="Assets/proteas_1.jpg" alt="Image 1" class="active">
+            </div>
+            <div class="section-text">
+                <p>PROTEAS (2023-present)</p>
+                <p>PROTEAS is a collective of roboticists who want to see their work put to good, to make a difference in the world. I co-founded this network with a superb team of PhD students who now use robotics to tackle sustainability issues through internationally ran workshops, funded research grants and local projects. Our biggest project to date is to propel forward sustinable agriculture using swarms of drones for pollination.</p>
             </div>
         </div>
     </div>

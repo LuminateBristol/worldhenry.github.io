@@ -43,13 +43,30 @@
             max-width: 400px;
             overflow: hidden;
             margin-right: 15px;
+            text-align: center;
         }
-        .carousel img {
+        .carousel img, .carousel video {
             width: 100%;
             display: none;
         }
-        .carousel img.active {
+        .carousel img.active, .carousel video.active {
             display: block;
+        }
+        .prev-btn, .next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .prev-btn { left: 0; }
+        .next-btn { right: 0; }
+        .prev-btn:hover, .next-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
         }
         .section-text {
             flex: 1;
@@ -103,50 +120,72 @@
         </div>
     </div>
     <div class="content">
+        <!-- The Hive Section -->
         <div class="section">
-            <div class="carousel">
-                <img src="Assets/hive_1.pnh" alt="Image 1" class="active">
-                <video autoplay muted loop>
-                    <source src="/Assets/hive_2.mp4" type="video/mp4">
+            <div class="carousel" id="carousel-hive">
+                <button class="prev-btn" onclick="changeSlide(-1, 'carousel-hive')">&#10094;</button>
+
+                <img src="Assets/hive_1.png" alt="Hive 1" class="active">
+                <video>
+                    <source src="Assets/hive_2.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <img src="Assets/hive_3.jpg" alt="Image 3">
+                <img src="Assets/hive_3.jpg" alt="Hive 3">
+
+                <button class="next-btn" onclick="changeSlide(1, 'carousel-hive')">&#10095;</button>
             </div>
             <div class="section-text">
                 <p>The Hive (PhD project - 2022-present)</p>
-                <p>My ongoing PhD project challenges the typical stereotypes of swarm robotics in an attempt to build a full-pipeline system to deploy swarms of robots in the real world. Unlike the traditional approach, we make use of 'The Hive', a globally accessible information repository that all robots can communicate through. The Hive is designed to be maleable, using a knowledge graph format to store information, facilitate communication with human collaborators and enable online learing.</p>
+                <p>My ongoing PhD project challenges the typical stereotypes of swarm robotics...</p>
             </div>
         </div>
+
+        <!-- Fortitude Section -->
         <div class="section">
-            <div class="carousel">
-                <img src="Assets/fort_1.jpg" alt="Image 1" class="active">
-                <img src="Assets/fort_2.jpg" alt="Image 2">
-                <img src="Assets/fort_3.jpg" alt="Image 3">
+            <div class="carousel" id="carousel-fortitude">
+                <button class="prev-btn" onclick="changeSlide(-1, 'carousel-fortitude')">&#10094;</button>
+
+                <img src="Assets/fort_1.jpg" alt="Fort 1" class="active">
+                <img src="Assets/fort_2.jpg" alt="Fort 2">
+                <img src="Assets/fort_3.jpg" alt="Fort 3">
+
+                <button class="next-btn" onclick="changeSlide(1, 'carousel-fortitude')">&#10095;</button>
             </div>
             <div class="section-text">
-                <p>Fortitude  (2014-2015</p>
-                <p>In 2015, as part of my MEng in Marine Engineering, we were tasked with designing, building and testing an ocean-capable autonomous surface vessel. We had minimal budget and a very tight timeline. Many industry partners said it was impossible. In less than 6 months we raised funds through sponsorship, designed, built and deployed the system. It even self-righted in the event of a capsize!</p>
+                <p>Fortitude (2014-2015)</p>
+                <p>In 2015, as part of my MEng in Marine Engineering...</p>
             </div>
         </div>
+
+        <!-- PROTEAS Section -->
         <div class="section">
-            <div class="carousel">
-                <img src="Assets/proteas_1.jpg" alt="Image 1" class="active">
+            <div class="carousel" id="carousel-proteas">
+                <button class="prev-btn" onclick="changeSlide(-1, 'carousel-proteas')">&#10094;</button>
+
+                <img src="Assets/proteas_1.jpg" alt="Proteas 1" class="active">
+                <img src="Assets/proteas_2.jpg" alt="Proteas 2">
+                <img src="Assets/proteas_3.jpg" alt="Proteas 3">
+
+                <button class="next-btn" onclick="changeSlide(1, 'carousel-proteas')">&#10095;</button>
             </div>
             <div class="section-text">
                 <p>PROTEAS (2023-present)</p>
-                <p>PROTEAS is a collective of roboticists who want to see their work put to good, to make a difference in the world. I co-founded this network with a superb team of PhD students who now use robotics to tackle sustainability issues through internationally ran workshops, funded research grants and local projects. Our biggest project to date is to propel forward sustinable agriculture using swarms of drones for pollination.</p>
+                <p>PROTEAS is a collective of roboticists who want to make a difference...</p>
             </div>
         </div>
     </div>
+
     <script>
-        let currentIndex = 0;
-        function showNextImage() {
-            let images = document.querySelectorAll('.carousel img');
-            images[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].classList.add('active');
+        function changeSlide(direction, carouselId) {
+            let carousel = document.getElementById(carouselId);
+            let slides = carousel.querySelectorAll('img, video');
+            let currentIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+
+            slides[currentIndex].classList.remove('active');
+
+            let newIndex = (currentIndex + direction + slides.length) % slides.length;
+            slides[newIndex].classList.add('active');
         }
-        setInterval(showNextImage, 3000);
     </script>
 </body>
 </html>

@@ -6,262 +6,97 @@
   <title>Projects</title>
   <style>
     body, html {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-      background: #000000;
+      margin: 0;
+      font-family: sans-serif;
+      background: #000;
+      color: white;
+    }
+
+    .banner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #000;
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .sign-text, .projects-text {
+      font-size: 20px;
+      font-weight: 200;
+      text-decoration: none;
+    }
+
+    .sign-text {
+      color: white;
+    }
+
+    .projects-text {
+      color: #ab456f;
     }
 
     .grid {
-      column-count: 3;
-      column-gap: 1.0rem;
-      padding: 1.0rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
     }
 
-    .item {
-      break-inside: avoid;
-      margin-bottom: 0.5rem;
-      width: 100%;
-      display: inline-block;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-
-    .item:hover {
-      transform: scale(1.02);
-      z-index: 2;
-    }
-
-.sign-text {
-  font-size: 25px;
-  font-weight: 200;
-  letter-spacing: 0.3px;
-  color: white;
-  white-space: nowrap;
-  text-decoration: none;
-}
-
-.projects-text {
-  font-size: 25px;
-  font-weight: 200;
-  letter-spacing: 0.3px;
-  color: #ab456f;
-  white-space: nowrap;
-  text-decoration: none;
-}
-
-.banner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #000;
-  padding: 0.1rem 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1001;
-}
-
-.right-text {
-  text-align: right;
-}
-
-
-    .item img,
-    .item video {
+    .grid img {
       width: 100%;
       height: auto;
-      display: block;
       border-radius: 6px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-      object-fit: cover;
-    }
-
-    .highlighted img,
-    .highlighted video {
-      transform: scale(1.05);
-    }
-
-    @media (max-width: 1000px) {
-      .grid {
-        column-count: 3;
-      }
-    }
-
-    @media (max-width: 700px) {
-      .grid {
-        column-count: 2;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .grid {
-        column-count: 1;
-      }
-    }
-
-    /* Modal Styles */
-    #modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-    }
-
-    .modal-content {
-  max-width: 80vw;
-  max-height: 80vh;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-    .modal-content img,
-    .modal-content video {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
       display: block;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+      background: #111;
     }
-
   </style>
 </head>
 <body>
 
-<div class="banner">
-  <a href="index.html" class="sign-text">henry hickson</a>
-  <span class="projects-text right-text">projects</span>
-</div>
-
-
-  <div class="grid" id="grid"></div>
-
-  <!-- Modal for fullscreen view -->
-  <div id="modal">
-    <div class="modal-content" id="modalContent"></div>
+  <div class="banner">
+    <a href="index.html" class="sign-text">henry hickson</a>
+    <span class="projects-text">projects</span>
   </div>
 
-  <script>
-  const folderPath = 'Projects/';
-  const mediaCount = 60;
-  const grid = document.getElementById('grid');
-  const modal = document.getElementById('modal');
-  const modalContent = document.getElementById('modalContent');
+  <div class="grid">
+    <!-- Only load .jpg images, numbered 1.jpg to 60.jpg -->
+    <!-- You can change the extension or range if needed -->
+    <!-- Using lazy loading for speed -->
+    <!-- Modify if you're using PNG or mixed types -->
+    <!-- These must exist in /Projects/ folder relative to root -->
 
-  const imageExtensions = ['jpg', 'png'];
-  const videoExtensions = ['mp4', 'mov'];
+    <!-- Quick and dirty loop with JS removed for simplicity -->
+    <!-- Replace below block with your actual media if needed -->
+    <!-- You could also script this with Python to generate HTML statically -->
+    <!-- Example with 60 images -->
+    <!-- Just include <img loading="lazy" src="Projects/1.jpg"> etc -->
 
-  async function buildGallery() {
-    const mediaItems = [];
+    <!-- BEGIN IMAGES -->
+    <!-- Generated: fast and simple -->
+    <!-- Edit count or extension if needed -->
+    <!-- ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ -->
+    <!-- You can generate this HTML block easily with any loop in Python or JS -->
+    <!-- Or I can give you a script for that -->
+    <!-- Example below is 1 to 60 -->
+    <!-- ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ -->
+    <!-- Lazy-load static images -->
+    <!-- This is faster than JS gallery + works on GitHub Pages -->
 
-    async function loadMedia(baseName, index, extList, isHighlighted) {
-      for (const ext of extList) {
-        const filePath = `${folderPath}${baseName}.${ext}`;
-        const isVideo = extList === videoExtensions;
-        const file = isVideo ? document.createElement('video') : new Image();
-        file.src = filePath;
+    <!-- Paste generated lines below -->
+    <!-- Sample of 5 shown, expand as needed -->
+    <img loading="lazy" src="Projects/1.jpg" alt="Project 1">
+    <img loading="lazy" src="Projects/2.jpg" alt="Project 2">
+    <img loading="lazy" src="Projects/3.jpg" alt="Project 3">
+    <img loading="lazy" src="Projects/4.jpg" alt="Project 4">
+    <img loading="lazy" src="Projects/5.jpg" alt="Project 5">
+    <!-- ...continue to 60.jpg or however many you want -->
+    <!-- ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ -->
 
-        if (isVideo) {
-          file.muted = true;
-          file.playsInline = true;
-          file.loop = true;
-        }
-
-        const loadPromise = new Promise((resolve, reject) => {
-          file.onload = () => resolve();
-          file.onloadeddata = () => resolve();
-          file.onerror = () => reject();
-        });
-
-        try {
-          await loadPromise;
-          mediaItems.push({ index, file, isHighlighted });
-        } catch (e) {
-          // file doesn't exist — skip
-        }
-      }
-    }
-
-    for (let i = 1; i <= mediaCount; i++) {
-      const baseName = `${i}`;
-      const highlightBase = `${i}*`;
-
-      await loadMedia(highlightBase, i, imageExtensions, true);
-      await loadMedia(highlightBase, i, videoExtensions, true);
-      await loadMedia(baseName, i, imageExtensions, false);
-      await loadMedia(baseName, i, videoExtensions, false);
-    }
-
-    // Sort by index to ensure correct order
-    mediaItems.sort((a, b) => a.index - b.index);
-
-    // Append to grid in order
-    for (const { file, isHighlighted } of mediaItems) {
-      const div = document.createElement('div');
-      div.className = 'item' + (isHighlighted ? ' highlighted' : '');
-      div.appendChild(file);
-      grid.appendChild(div);
-
-      if (file.tagName === 'VIDEO') {
-        div.addEventListener('mouseenter', () => file.play());
-        div.addEventListener('mouseleave', () => file.pause());
-      }
-
-      div.addEventListener('click', () => {
-        modalContent.innerHTML = '';
-        const clone = file.cloneNode(true);
-        if (clone.tagName === 'VIDEO') {
-          clone.controls = true;
-          clone.autoplay = true;
-        }
-
-        modalContent.style.width = '';
-        modalContent.style.height = '';
-        modalContent.style.maxWidth = '80vw';
-        modalContent.style.maxHeight = '80vh';
-
-        const isPortrait = file.tagName === 'IMG'
-          ? file.naturalHeight > file.naturalWidth
-          : file.videoHeight > file.videoWidth;
-
-        if (isPortrait) {
-          modalContent.style.maxWidth = '60vh';
-          modalContent.style.maxHeight = '75vh';
-        }
-
-        modalContent.appendChild(clone);
-        modal.style.display = 'flex';
-      });
-    }
-  }
-
-  // Close modal on background click or ESC key
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-      modalContent.innerHTML = '';
-    }
-  });
-
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      modal.style.display = 'none';
-      modalContent.innerHTML = '';
-    }
-  });
-
-  window.addEventListener('load', buildGallery);
-</script>
-
+  </div>
 
 </body>
 </html>

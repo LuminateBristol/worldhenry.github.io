@@ -39,8 +39,8 @@
         }
         .carousel {
             position: relative;
-            width: 50%;
-            max-width: 400px;
+            width: 60%;
+            max-width: 550px;
             overflow: hidden;
             margin-right: 15px;
             text-align: center;
@@ -56,7 +56,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.1	);
             color: white;
             border: none;
             padding: 10px;
@@ -125,11 +125,12 @@
             <div class="carousel" id="carousel-hive">
                 <button class="prev-btn" onclick="changeSlide(-1, 'carousel-hive')">&#10094;</button>
 
-                <img src="Assets/hive_1.png" alt="Hive 1" class="active">
-                <video>
-                    <source src="Assets/hive_2.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <img src="Assets/hive_1.jpg" alt="Hive 1" class="active">
+                <video controls autoplay loop muted style="width: 66%; height: auto;">
+    			<source src="Assets/0215.mp4" type="video/mp4">
+    			Your browser does not support the video tag.
+		</video>
+
                 <img src="Assets/hive_3.jpg" alt="Hive 3">
 
                 <button class="next-btn" onclick="changeSlide(1, 'carousel-hive')">&#10095;</button>
@@ -148,6 +149,7 @@
                 <img src="Assets/fort_1.jpg" alt="Fort 1" class="active">
                 <img src="Assets/fort_2.jpg" alt="Fort 2">
                 <img src="Assets/fort_3.jpg" alt="Fort 3">
+                <img src="Assets/fort_5.jpg" alt="Fort 5">
 
                 <button class="next-btn" onclick="changeSlide(1, 'carousel-fortitude')">&#10095;</button>
             </div>
@@ -163,8 +165,6 @@
                 <button class="prev-btn" onclick="changeSlide(-1, 'carousel-proteas')">&#10094;</button>
 
                 <img src="Assets/proteas_1.jpg" alt="Proteas 1" class="active">
-                <img src="Assets/proteas_2.jpg" alt="Proteas 2">
-                <img src="Assets/proteas_3.jpg" alt="Proteas 3">
 
                 <button class="next-btn" onclick="changeSlide(1, 'carousel-proteas')">&#10095;</button>
             </div>

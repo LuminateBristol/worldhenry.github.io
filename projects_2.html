@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Projects</title>
+  <style>
+    body {
+      margin: 0;
+      background: #f0f0f0;
+      font-family: sans-serif;
+    }
+
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 4px;
+    }
+
+    .row {
+      display: flex;
+      gap: 4px;
+    }
+
+    .item {
+      flex: 0 0 auto;
+      overflow: hidden;
+      position: relative;
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+
+    .item img,
+    .item video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .item video {
+      pointer-events: none;
+    }
+
+    .item:hover video {
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body>
+
+<div class="gallery" id="gallery"></div>
+
+<script>
+  const folderPath = 'Projects/';
+  const mediaCount = 60;
+  const imageExtensions = ['jpg', 'png'];
+  const videoExtensions = ['mp4', 'mov'];
+  const targetRowHeight = 400;
+  const rowMargin = 4;
+
+  const gallery = document.getElementById('gallery');
+  const mediaItems = [];
+
+  function loadMedia(baseName, extList) {
+    return Promise.all(extList.map(ext => {
+      return new Promise(resolve => {
+        const isVideo = videoExtensions.includes(ext);
+        const media = isVideo ? document.createElement('video') : new Image();
+        media.src = `${folderPath}${baseName}.${ext}`;
+        if (isVideo) {
+          media.muted = true;
+          media.playsInline = true;
+          media.loop = true;
+        }
+
+        const onLoad = () => {
+          const aspectRatio = isVideo
+            ? media.videoWidth / media.videoHeight
+            : media.naturalWidth / media.naturalHeight;
+          if (aspectRatio) {
+            resolve({ element: media, ratio: aspectRatio });
+          }
+        };
+
+        if (isVideo) {
+          media.onloadeddata = onLoad;
+        } else {
+          media.onload = onLoad;
+        }
+
+        media.onerror = () => resolve(null);
+      });
+    }));
+  }
+
+  async function buildGallery() {
+  for (let i = 1; i <= mediaCount; i++) {
+    // Try highlighted version first
+    const highlighted = await loadMedia(`${i}*`, imageExtensions.concat(videoExtensions));
+    highlighted.filter(Boolean).forEach(item => mediaItems.push(item));
+
+    // Then the regular version
+    const normal = await loadMedia(`${i}`, imageExtensions.concat(videoExtensions));
+    normal.filter(Boolean).forEach(item => mediaItems.push(item));
+  }
+
+  renderRows();
+}
+
+
+  function renderRows() {
+    let row = [];
+    let rowAspectSum = 0;
+    const galleryWidth = gallery.clientWidth;
+
+    mediaItems.forEach((item, i) => {
+      row.push(item);
+      rowAspectSum += item.ratio;
+
+      const rowWidth = (targetRowHeight * rowAspectSum) + (row.length - 1) * rowMargin;
+
+      if (rowWidth >= galleryWidth || i === mediaItems.length - 1) {
+        const rowHeight = (galleryWidth - (row.length - 1) * rowMargin) / rowAspectSum;
+        const rowDiv = document.createElement('div');
+        rowDiv.className = 'row';
+
+        row.forEach(({ element, ratio }) => {
+          const itemDiv = document.createElement('div');
+          itemDiv.className = 'item';
+          itemDiv.style.width = `${rowHeight * ratio}px`;
+          itemDiv.style.height = `${rowHeight}px`;
+
+          itemDiv.appendChild(element);
+          rowDiv.appendChild(itemDiv);
+
+          if (element.tagName === 'VIDEO') {
+            itemDiv.addEventListener('mouseenter', () => element.play());
+            itemDiv.addEventListener('mouseleave', () => element.pause());
+          }
+        });
+
+        gallery.appendChild(rowDiv);
+        row = [];
+        rowAspectSum = 0;
+      }
+    });
+  }
+
+  window.addEventListener('load', buildGallery);
+  window.addEventListener('resize', () => {
+    gallery.innerHTML = '';
+    renderRows();
+  });
+</script>
+
+</body>
+</html>

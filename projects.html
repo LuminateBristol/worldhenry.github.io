@@ -7,6 +7,7 @@
   <style>
     body, html {
       margin: 0;
+      padding: 0;
       font-family: sans-serif;
       background: #000;
       color: white;
@@ -39,19 +40,30 @@
     }
 
     .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1rem;
+      column-count: 3;
+      column-gap: 1rem;
       padding: 1rem;
     }
 
     .grid img {
       width: 100%;
-      height: auto;
-      border-radius: 6px;
+      margin-bottom: 1rem;
       display: block;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+      border-radius: 6px;
       background: #111;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 1000px) {
+      .grid {
+        column-count: 2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .grid {
+        column-count: 1;
+      }
     }
   </style>
 </head>
@@ -63,39 +75,13 @@
   </div>
 
   <div class="grid">
-    <!-- Only load .jpg images, numbered 1.jpg to 60.jpg -->
-    <!-- You can change the extension or range if needed -->
-    <!-- Using lazy loading for speed -->
-    <!-- Modify if you're using PNG or mixed types -->
-    <!-- These must exist in /Projects/ folder relative to root -->
-
-    <!-- Quick and dirty loop with JS removed for simplicity -->
-    <!-- Replace below block with your actual media if needed -->
-    <!-- You could also script this with Python to generate HTML statically -->
-    <!-- Example with 60 images -->
-    <!-- Just include <img loading="lazy" src="Projects/1.jpg"> etc -->
-
-    <!-- BEGIN IMAGES -->
-    <!-- Generated: fast and simple -->
-    <!-- Edit count or extension if needed -->
-    <!-- ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ -->
-    <!-- You can generate this HTML block easily with any loop in Python or JS -->
-    <!-- Or I can give you a script for that -->
-    <!-- Example below is 1 to 60 -->
-    <!-- ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ -->
-    <!-- Lazy-load static images -->
-    <!-- This is faster than JS gallery + works on GitHub Pages -->
-
-    <!-- Paste generated lines below -->
-    <!-- Sample of 5 shown, expand as needed -->
+    <!-- Lazy-loaded image block -->
     <img loading="lazy" src="Projects/1.jpg" alt="Project 1">
-    <img loading="lazy" src="Projects/2.jpg" alt="Project 2">
-    <img loading="lazy" src="Projects/3.jpg" alt="Project 3">
-    <img loading="lazy" src="Projects/4.jpg" alt="Project 4">
-    <img loading="lazy" src="Projects/5.jpg" alt="Project 5">
-    <!-- ...continue to 60.jpg or however many you want -->
-    <!-- ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ -->
-
+    <img loading="lazy" src="Projects/3.jpg" alt="Project 2">
+    <img loading="lazy" src="Projects/8.jpg" alt="Project 3">
+    <img loading="lazy" src="Projects/9.jpg" alt="Project 4">
+    <img loading="lazy" src="Projects/18.jpg" alt="Project 5">
+    <!-- Add more... up to 60 or however many you need -->
   </div>
 
 </body>

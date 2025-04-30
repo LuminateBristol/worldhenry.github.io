@@ -1,191 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Moon Inspired Layout</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            display: flex;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .sidebar {
-            width: 25%;
-            background-color: #f4f4f4;
-            padding: 15px;
-            box-sizing: border-box;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .content {
-            width: 75%;
-            padding: 15px;
-            box-sizing: border-box;
-            overflow-y: auto;
-        }
-        .section {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 15px;
-        }
-        .carousel {
-            position: relative;
-            width: 60%;
-            max-width: 550px;
-            overflow: hidden;
-            margin-right: 15px;
-            text-align: center;
-        }
-        .carousel img, .carousel video {
-            width: 100%;
-            display: none;
-        }
-        .carousel img.active, .carousel video.active {
-            display: block;
-        }
-        .prev-btn, .next-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.1	);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            z-index: 10;
-        }
-        .prev-btn { left: 0; }
-        .next-btn { right: 0; }
-        .prev-btn:hover, .next-btn:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-        .section-text {
-            flex: 1;
-        }
-        p {
-            margin: 5px 0;
-            line-height: 1.2;
-        }
-        .sidebar .links {
-            margin-top: auto;
-            padding-top: 15px;
-        }
-        .sidebar .links a {
-            display: block;
-            text-decoration: none;
-            color: black;
-            margin-bottom: 5px;
-        }
-        @media (max-width: 768px) {
-            body {
-                flex-direction: column;
-                height: auto;
-            }
-            .sidebar {
-                width: 100%;
-                height: auto;
-            }
-            .content {
-                width: 100%;
-                overflow-y: visible;
-            }
-            .section {
-                flex-direction: column;
-                text-align: center;
-            }
-            .carousel {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-        }
-    </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
 </head>
 <body>
-    <div class="sidebar">
-        <p>robots.</p>
-        <p>A selection of robotics projects and initiatives.</p>
-        <div class="links">
-            <a href="index.html">Home</a>
-            <a href="contact.html">Contact</a>
-            <a href="https://www.linkedin.com/in/henry-hickson-29360090/" target="_blank">LinkedIn</a>
-        </div>
-    </div>
-    <div class="content">
-        <!-- The Hive Section -->
-        <div class="section">
-            <div class="carousel" id="carousel-hive">
-                <button class="prev-btn" onclick="changeSlide(-1, 'carousel-hive')">&#10094;</button>
-
-                <img src="Assets/hive_1.jpg" alt="Hive 1" class="active">
-                <video controls autoplay loop muted style="width: 66%; height: auto;">
-    			<source src="Assets/0215.mp4" type="video/mp4">
-    			Your browser does not support the video tag.
-		</video>
-
-                <img src="Assets/hive_3.jpg" alt="Hive 3">
-
-                <button class="next-btn" onclick="changeSlide(1, 'carousel-hive')">&#10095;</button>
-            </div>
-            <div class="section-text">
-                <p>The Hive (PhD project - 2022-present)</p>
-                <p>My ongoing PhD project challenges the typical stereotypes of swarm robotics...</p>
-            </div>
-        </div>
-
-        <!-- Fortitude Section -->
-        <div class="section">
-            <div class="carousel" id="carousel-fortitude">
-                <button class="prev-btn" onclick="changeSlide(-1, 'carousel-fortitude')">&#10094;</button>
-
-                <img src="Assets/fort_1.jpg" alt="Fort 1" class="active">
-                <img src="Assets/fort_2.jpg" alt="Fort 2">
-                <img src="Assets/fort_3.jpg" alt="Fort 3">
-                <img src="Assets/fort_5.jpg" alt="Fort 5">
-
-                <button class="next-btn" onclick="changeSlide(1, 'carousel-fortitude')">&#10095;</button>
-            </div>
-            <div class="section-text">
-                <p>Fortitude (2014-2015)</p>
-                <p>In 2015, as part of my MEng in Marine Engineering...</p>
-            </div>
-        </div>
-
-        <!-- PROTEAS Section -->
-        <div class="section">
-            <div class="carousel" id="carousel-proteas">
-                <button class="prev-btn" onclick="changeSlide(-1, 'carousel-proteas')">&#10094;</button>
-
-                <img src="Assets/proteas_1.jpg" alt="Proteas 1" class="active">
-
-                <button class="next-btn" onclick="changeSlide(1, 'carousel-proteas')">&#10095;</button>
-            </div>
-            <div class="section-text">
-                <p>PROTEAS (2023-present)</p>
-                <p>PROTEAS is a collective of roboticists who want to make a difference...</p>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function changeSlide(direction, carouselId) {
-            let carousel = document.getElementById(carouselId);
-            let slides = carousel.querySelectorAll('img, video');
-            let currentIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
-
-            slides[currentIndex].classList.remove('active');
-
-            let newIndex = (currentIndex + direction + slides.length) % slides.length;
-            slides[newIndex].classList.add('active');
-        }
-    </script>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;My Projects&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="stylesheet" href="style.css" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1 class="title"&gt;My Projects&lt;/h1&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="project"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="media"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;img src="Projects/project1.jpg" alt="Project 1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="description"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Project 1&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;This project explores the use of swarm robotics in small-scale delivery networks.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="project"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="media"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;video src="Projects/project2.mp4" controls muted&gt;&lt;/video&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="description"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Project 2&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;An AI-based controller that allows robots to navigate dynamically through narrow environments.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="project"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="media"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;img src="Projects/project3.jpg" alt="Project 3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="description"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Project 3&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;This simulation showcases real-time coordination among 30+ robots in complex tasks.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="project"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="media"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;video src="Projects/project4.mp4" controls muted&gt;&lt;/video&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="description"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Project 4&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Light-based interactive art installation powered by a Raspberry Pi and Teensy microcontroller.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="project"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="media"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;img src="Projects/project5.jpg" alt="Project 5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="description"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Project 5&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Visual exploration of evolution using cellular automata and dynamic LED grids.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
 </body>
 </html>

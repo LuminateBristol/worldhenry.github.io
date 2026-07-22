@@ -1,0 +1,4 @@
+title: DOTS-in-a-box
+date: 2023
+
+Working with the BRL swarm team to program up some demos for a portable version of our DOTS robot system. This entire system folds down into a portable suitcase. I built this demo to include obstacle avoidance with multiple robots moving between waypoints without crashing, despite the small space.

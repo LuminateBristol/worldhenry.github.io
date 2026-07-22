@@ -1,0 +1,5 @@
+title: BlimpleBee
+date: 2021
+link: Paper: BlimpleBee (TAROS 2024) | https://research-information.bris.ac.uk/en/publications/blimplebee-the-helium-assisted-indoor-inspection-drone/
+
+A helium-assisted drone for indoor inspection and monitoring of complex 3D spaces. Driven by the vertical farming sector, this project successfully designed, built and tested one of the smallest autonomous blimps of its kind.

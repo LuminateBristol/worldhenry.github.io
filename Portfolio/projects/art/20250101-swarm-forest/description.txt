@@ -1,0 +1,5 @@
+title: The Swarm Forest
+date: 2025
+link: Paper: The Forest (2024) | https://link.springer.com/chapter/10.1007/978-3-031-56992-0_1
+
+An audio-visual art installation inspired by swarm robotics, designed and built with the CA:VE team. Using lights and sound we invite the audience to participate as a 'human swarm', collectively creating an emergent art piece and composing a piece of music together.

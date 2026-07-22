@@ -1,0 +1,5 @@
+title: Space Pride
+date: 2024
+link: Press release | https://spacepride.space/advocacy/fashion-piece-press-release/
+
+A fashion-tech collaboration with Space Pride, worn by bionic popstar Tilly Lockey. I designed the electronics and LED system, driving a live rainbow of swarm emergence (Conway's Game of Life) across the garment. Exhibited at the International Astronautical Congress in Milan and screened at Bristol Pride.

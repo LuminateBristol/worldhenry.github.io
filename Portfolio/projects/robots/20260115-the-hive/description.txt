@@ -1,0 +1,7 @@
+title: The Hive
+date: 2026
+link: PhD thesis | https://research-information.bris.ac.uk/en/studentTheses/hybrid-swarms/
+link: Paper: Back to Bee-sics (ALIFE 2025) | https://research-information.bris.ac.uk/en/publications/back-to-bee-sics-learning-information-sharing-strategies-for-robo/
+link: Paper: Less is More (IEEE ACSOS 2025) | https://research-information.bris.ac.uk/en/publications/less-is-more-an-analysis-of-minimal-information-sharing-on-the-pe/
+
+The core of my recently completed PhD, the Hive is a collective knowledge architecture for hybrid robot swarms. By letting robots share information through a cloud-based Hive, we see measurable improvements in performance, transparency and network efficiency.

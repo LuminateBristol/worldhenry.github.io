@@ -1,0 +1,4 @@
+title: Fortitude
+date: 2015
+
+An autonomous surface vessel designed for crossing oceans. 3m, self-righting, internal power, twin drive, custom hull design with payload space for environmental monitoring.

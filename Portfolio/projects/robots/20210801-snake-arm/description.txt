@@ -1,0 +1,3 @@
+title: Flexible Robot Arm Concept
+
+The brief was to design a robot arm that could be mounted on a small wheeled base and pick things from the floor. The challenge was to do this in a unique and novel way. We wanted to build a system that was robust to knocks and bumps but also safe for people to be around. Unlike a rigid robot arm, flexible or soft robots comply easily. This one bounces back if it knocks against a coffee table or chair leg. It complies to any forces without damage too, making it equal object, pet, or toddler proof. This was a very early-stage MVP but showed potential for these kind of cable-driven systems in home environments.

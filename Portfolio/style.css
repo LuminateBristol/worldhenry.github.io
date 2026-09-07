@@ -111,29 +111,15 @@ header {
     color: #666;
 }
 
-/* Project Page Layout */
-main {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
-
-.project {
-    margin-bottom: 100px;
-}
-
-.project img,
-.project video {
-    width: 100%;
-    height: auto;
-    border-radius: 1px;
-    margin-bottom: 15px;
-}
-
 .project p {
     margin: 0;
-    font-size: 0.68rem;
-    letter-spacing: 1.0px;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+}
+
+.project p + p {
+    margin-top: 12px;
 }
 
 /* Publication / press links under a project */
@@ -158,13 +144,6 @@ main {
     border-bottom-color: #4da6ff;
 }
 
-/* Hover effect */
-.project img:hover,
-.project video:hover {
-    transform: scale(1.01);
-    transition: transform 0.3s ease;
-}
-
 /* Fixed top banner for projects page */
 .projects-header {
   position: fixed;
@@ -183,14 +162,21 @@ main {
   color: #111;
 }
 
-/* Add spacing so content isn't hidden behind fixed header */
+/* Project grid — pushes content below the fixed header */
 main {
-  max-width: 700px;
-  margin: 80px auto 0 auto; /* pushes content below the fixed header */
-  padding: 40px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 116px 24px 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(600px, 100%), 1fr));
+  gap: 22px;
 }
 
-/* Project title / date, shown above the description */
+.projects-empty {
+  grid-column: 1 / -1;
+}
+
+/* Project title / date, shown above the description on the detail page */
 .project-meta {
     display: flex;
     align-items: baseline;
@@ -199,15 +185,189 @@ main {
 }
 
 .project-title {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     font-weight: 500;
     letter-spacing: 0.3px;
 }
 
 .project-date {
-    font-size: 0.62rem;
+    font-size: 0.68rem;
     letter-spacing: 0.5px;
     color: #999;
+}
+
+/* Grid tile — the clickable 16:9 thumbnail for a project */
+.tile {
+    all: unset;
+    display: block;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 2px;
+    cursor: pointer;
+    background: #f2f2f2;
+    isolation: isolate;
+}
+
+.tile:focus-visible {
+    outline: 2px solid #4169e1;
+    outline-offset: 2px;
+}
+
+.tile img,
+.tile video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s cubic-bezier(.2, .7, .3, 1);
+}
+
+.tile:hover img,
+.tile:hover video,
+.tile:focus-visible img,
+.tile:focus-visible video {
+    transform: scale(1.035);
+}
+
+.tile .media-placeholder {
+    position: absolute;
+    inset: 0;
+    aspect-ratio: auto;
+}
+
+.tile .cap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 34px 14px 12px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.22) 60%, transparent);
+    color: #fff;
+    pointer-events: none;
+}
+
+.tile .cap .project-title {
+    display: block;
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+.tile .cap .project-date {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.tile .badge,
+.tile .count {
+    position: absolute;
+    top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.58rem;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+    padding: 4px 8px;
+    border-radius: 100px;
+}
+
+.tile .badge { left: 8px; }
+.tile .count { right: 8px; padding: 5px; }
+.tile .badge svg,
+.tile .count svg { width: 8px; height: 8px; display: block; }
+
+@media (prefers-reduced-motion: reduce) {
+    .tile img,
+    .tile video,
+    .tile .cap {
+        transition: none;
+    }
+    .tile:hover img,
+    .tile:hover video {
+        transform: none;
+    }
+}
+
+/* Project detail page — full carousel + write-up, opened from a grid tile */
+.back-link {
+    align-self: center;
+    font-size: 0.8rem;
+    letter-spacing: 0.3px;
+    color: #666;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: #111;
+}
+
+.project-detail {
+    display: block;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 116px 24px 80px;
+}
+
+.project-detail .carousel {
+    border-radius: 4px;
+}
+
+.project-detail .project-meta {
+    margin-top: 26px;
+    margin-bottom: 20px;
+}
+
+.project-detail .project-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+
+.project-detail .project-date {
+    font-size: 0.78rem;
+}
+
+/* Description body — smaller, lighter, generous line-height and
+   clear spacing between paragraphs for comfortable reading. */
+.project-detail p {
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.75;
+    letter-spacing: 0.1px;
+    color: #333;
+}
+
+.project-detail p + p {
+    margin-top: 1.15em;
+}
+
+/* Publication / press links under a description */
+.project-detail .links {
+    margin-top: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+}
+
+.project-detail .links a {
+    font-size: 0.62rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #4da6ff;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.project-detail .links a:hover {
+    border-bottom-color: #4da6ff;
 }
 
 /* Carousel */
@@ -301,6 +461,4 @@ main {
     background: #fff;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
 }
-
-/* Note: the blog ("The Build Log") uses its own standalone theme in blog.css */
 

@@ -1,42 +1,24 @@
 # worldhenry.github.io
 
 Henry Hickson's portfolio site. Plain HTML/CSS/JS, no framework, no server —
-just static pages plus two small Python build scripts that generate the
-blog index and the two portfolio pages from folders of content.
+just static pages plus one small Python build script that generates the
+two portfolio pages from folders of content.
 
 ```
-index.html              home page (links to robots, art, BLog)
+index.html              home page (links to robots, art)
 
 Portfolio/
   art.html               "art" page   — auto-generated, don't hand-edit
-  copy.html               "robots" page — auto-generated, don't hand-edit
-  build_portfolio.py      generates the two pages above from projects/
+  copy.html              "robots" page — auto-generated, don't hand-edit
+  build_portfolio.py     generates the two pages above from projects/
   carousel.js / style.css
+  Assets/                home-page background video
   projects/
-    art/     20200101-spacechanger/, 20240101-space-pride/, ...
+    art/     20200101-spacechanger/, 20250101-space-pride/, ...
     robots/  20150101-fortitude/, 20260115-the-hive/, ...
-
-BLog/
-  blog.html               post list — auto-generated, don't hand-edit
-  about.html
-  build_blog.py            generates blog.html from posts/
-  posts/   20260718.html, ...
 ```
 
 ---
-
-## Adding a blog post
-
-1. Copy an existing file in `BLog/posts/` and rename it `YYYYMMDD.html`
-   (the date it's sorted by — newest first on the blog page).
-2. Edit its `<meta name="post-title" ...>`, `post-summary`, `post-tag`,
-   and the `<article>` body.
-3. Rebuild the index:
-   ```
-   cd BLog
-   python3 build_blog.py
-   ```
-   (Or just commit — see "Auto-build on commit" below.)
 
 ## Adding a portfolio project
 
@@ -74,23 +56,9 @@ BLog/
 
 There's no automation for this — it's a one-off. Copy the structure of
 `Portfolio/art.html` (header + `<main>`), link it from `index.html`'s
-nav, and style it via `Portfolio/style.css` (or its own stylesheet, like
-`BLog/blog.css` does).
-
-## Auto-build on commit
-
-A git pre-commit hook (`.git/hooks/pre-commit`) runs both build scripts
-automatically before every commit and stages whatever they regenerate
-(`blog.html`, `art.html`, `copy.html`, new poster thumbnails). In normal
-use you never need to run the build scripts by hand — just add your
-post/project folder and commit as usual.
-
-Caveat: `.git/hooks/` isn't tracked by git, so this hook only exists on
-this machine. If you ever set up the repo on another computer, recreate
-it from this one (or just remember to run the two `build_*.py` scripts
-manually before committing).
+nav, and style it via `Portfolio/style.css`.
 
 ---
 
-*Original (pre-restructure) site lives untouched in the sibling
-`worldhenry.github.io/` folder. All active work is in this folder.*
+*The blog ("The Build Log") was moved out to `../Archive/` on 2026-09-07 —
+to be revisited later.*

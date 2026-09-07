@@ -1,0 +1,5 @@
+title: SWOOT Delivery Robot
+
+This project was more of a commercial and social test than a deeply technical, fully-operational build. The idea was to use small wheeled robots to carry out deliveries around Bristol, starting with University campuses. However, many of the questions we got were about shape, size, interaction with the public, social acceptance, curb-side interference etc. So to help distill some of these we built an MVP version, remotely operated, designed to be a friendly, approachable and fun delivery system, and to work alongside cargo bikes so as to still provide a line of jobs for delivery drivers and other staff in the industry. This was the result.
+
+This project has now fed into an ongoing startup - more on this soon!

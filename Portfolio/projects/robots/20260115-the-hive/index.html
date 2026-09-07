@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Hive — henry hickson</title>
+  <link rel="stylesheet" href="../../../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Auto-generated from projects/robots/20260115-the-hive/description.txt by build_portfolio.py — do not edit by hand. -->
+  <header class="projects-header">
+    <a class="name-link" href="../../../../index.html">henry hickson</a>
+    <a class="back-link" href="../../../copy.html">&larr; back to robots</a>
+  </header>
+
+  <main class="project-detail">
+      <div class="carousel">
+        <div class="carousel-track">
+          <div class="carousel-slide is-active"><img src="1.png" alt="The Hive" loading="lazy"></div>
+          <div class="carousel-slide"><video src="2.mp4" poster=".posters/2.mp4.jpg" controls muted preload="none" playsinline></video></div>
+          <div class="carousel-slide"><video src="3.MOV" poster=".posters/3.MOV.jpg" controls muted preload="none" playsinline></video></div>
+          <div class="carousel-slide"><video src="4.MOV" poster=".posters/4.MOV.jpg" controls muted preload="none" playsinline></video></div>
+        </div>
+        <button type="button" class="carousel-arrow carousel-prev" aria-label="Previous">&larr;</button>
+        <button type="button" class="carousel-arrow carousel-next" aria-label="Next">&rarr;</button>
+        <div class="carousel-dots">
+          <button type="button" class="carousel-dot is-active" aria-label="Go to slide 1"></button>
+          <button type="button" class="carousel-dot" aria-label="Go to slide 2"></button>
+          <button type="button" class="carousel-dot" aria-label="Go to slide 3"></button>
+          <button type="button" class="carousel-dot" aria-label="Go to slide 4"></button>
+        </div>
+      </div>
+    <div class="project-meta"><span class="project-title">The Hive</span><span class="project-date">2026</span></div>
+      <p>The core of my PhD project (2025) where I built a scale Hive Mind for information sharing between robots and humans whilst maintaining total agency.</p>
+      <p>Previous research, and to some extent basic, intuition show that a group of collaborating robots gain significant performance improvements when able to share information widely. However, most of these information sharing mechanisms are limited by either the structure of the database or the network they share over, this means they do not scale well.</p>
+      <p>Our vision with this project was to develop a system that scales to huge numbers, globally even, in order to connect devices, humans and robots over large geographical areas. This enables sharing of more than just data, but instead of knowledge - e.g. how to complete a given task or understand a given scenario.</p>
+      <p>To enable this, we introduced the idea of maintained agency. This is a common concept in swarm robotics, where each individual maintains all its decision making locally, reacting instead to the environment. This scales well as there is no reliance on a central controller, instead all compute remains on each individual.</p>
+      <p>That maintained agency then created the parameters for building the shared knowledge base. It must be accessible by each individual (with security measures in place to prevent unintended use), it must be changeable in shape and size to accommodate new information without needing an entire re-structure, it must also be reactive, holding some agency of its own to identify, remove or highlight data, thereby keeping the information manageable and readable by all those connected.</p>
+      <p>The final design uses knowledge graphs with a Hive oversight agent to achieve these goals. Robots, devices and humans can log themselves on the graph, can add data based on their observations, and can browse the observations of others.</p>
+      <p>The Hive oversight agent then uses various analytical and learnt policies to filter data for the good of those connected. This agent can be tweaked or changed depending on the intended use of each instance of the Hive Mind. Multiple instances can interact with one another to form a wider network.</p>
+      <p>We build this system in both simulation and using a real robot platform connected via a local WiFi network. Various scenarios were explored most notable a delivery scenario where robots shared information via the proposed Hive network to improve performance in delivering coloured boxes. We also proved the system worked over a range of networks including cellular and 5G, enabling operation city-wide or beyond.</p>
+    <div class="links">
+        <a href="https://research-information.bris.ac.uk/en/studentTheses/hybrid-swarms/" target="_blank" rel="noopener">PhD thesis</a>
+        <a href="https://research-information.bris.ac.uk/en/publications/back-to-bee-sics-learning-information-sharing-strategies-for-robo/" target="_blank" rel="noopener">Paper: Back to Bee-sics (ALIFE 2025)</a>
+        <a href="https://research-information.bris.ac.uk/en/publications/less-is-more-an-analysis-of-minimal-information-sharing-on-the-pe/" target="_blank" rel="noopener">Paper: Less is More (IEEE ACSOS 2025)</a>
+    </div>
+  </main>
+
+  <script src="../../../carousel.js"></script>
+</body>
+</html>

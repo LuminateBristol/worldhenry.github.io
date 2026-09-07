@@ -4,4 +4,18 @@ link: PhD thesis | https://research-information.bris.ac.uk/en/studentTheses/hybr
 link: Paper: Back to Bee-sics (ALIFE 2025) | https://research-information.bris.ac.uk/en/publications/back-to-bee-sics-learning-information-sharing-strategies-for-robo/
 link: Paper: Less is More (IEEE ACSOS 2025) | https://research-information.bris.ac.uk/en/publications/less-is-more-an-analysis-of-minimal-information-sharing-on-the-pe/
 
-The core of my recently completed PhD, the Hive is a collective knowledge architecture for hybrid robot swarms. By letting robots share information through a cloud-based Hive, we see measurable improvements in performance, transparency and network efficiency.
+The core of my PhD project (2021-2025) where I built a scale Hive Mind for information sharing between robots and humans whilst maintaining total agency.
+
+Previous research, and to some extent basic, intuition show that a group of collaborating robots gain significant performance improvements when able to share information widely. However, most of these information sharing mechanisms are limited by either the structure of the database or the network they share over, this means they do not scale well.
+
+Our vision with this project was to develop a system that scales to huge numbers, globally even, in order to connect devices, humans and robots over large geographical areas. This enables sharing of more than just data, but instead of knowledge - e.g. how to complete a given task or understand a given scenario.
+
+To enable this, we introduced the idea of maintained agency. This is a common concept in swarm robotics, where each individual maintains all its decision making locally, reacting instead to the environment. This scales well as there is no reliance on a central controller, instead all compute remains on each individual.
+
+That maintained agency then created the parameters for building the shared knowledge base. It must be accessible by each individual (with security measures in place to prevent unintended use), it must be changeable in shape and size to accommodate new information without needing an entire re-structure, it must also be reactive, holding some agency of its own to identify, remove or highlight data, thereby keeping the information manageable and readable by all those connected.
+
+The final design uses knowledge graphs with a Hive oversight agent to achieve these goals. Robots, devices and humans can log themselves on the graph, can add data based on their observations, and can browse the observations of others.
+
+The Hive oversight agent then uses various analytical and learnt policies to filter data for the good of those connected. This agent can be tweaked or changed depending on the intended use of each instance of the Hive Mind. Multiple instances can interact with one another to form a wider network.
+
+We build this system in both simulation and using a real robot platform connected via a local WiFi network. Various scenarios were explored most notable a delivery scenario where robots shared information via the proposed Hive network to improve performance in delivering coloured boxes. We also proved the system worked over a range of networks including cellular and 5G, enabling operation city-wide or beyond.
